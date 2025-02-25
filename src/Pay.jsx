@@ -4,7 +4,7 @@ const UpiPayment = () => {
   const handlePayment = () => {
     try {
       // Receiver's UPI ID (payee)
-      const receiverUpiID = "7975866050@ybl";
+      const receiverUpiID = "harshanaik8197@okhdfcbank";
       // Receiver's (merchant) name - URL encoded later
       const payeeName = "Merchant Name"; 
       // Unique order/transaction ID - ideally generated dynamically
