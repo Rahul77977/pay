@@ -3,35 +3,20 @@ import React from 'react';
 const UpiPayment = () => {
   const handlePayment = () => {
     try {
-      // Receiver's UPI ID (payee)
-      const receiverUpiID = "harshanaik8197@okhdfcbank";
-      // Receiver's (merchant) name - URL encoded later
-      const payeeName = "Merchant Name"; 
-      // Unique order/transaction ID - ideally generated dynamically
-      const orderId = "ORDER123";
-      // Transaction description or note
-      const transactionNote = "Hotel Booking Payment";
-      // Payment amount (set to 1 Rupee)
-      const amount = 1;
-      
-      // URL-encode parameters to handle spaces/special characters
-      const encodedName = encodeURIComponent(payeeName);
-      const encodedNote = encodeURIComponent(transactionNote);
-      
-      // Construct the UPI URL with the required parameters
-      const upiUrl = `upi://pay?pa=${receiverUpiID}&pn=${encodedName}&tid=${orderId}&tn=${encodedNote}&am=${amount}&cu=INR`;
-      
-      // Log the URL (for debugging purposes)
-      console.log("Redirecting to UPI URL:", upiUrl);
-      
-      // Attempt to open the UPI link in a new tab/window
-      const newWindow = window.open(upiUrl, "_blank");
+      // Your Razorpay.me payment link
+      const razorpayLink = "https://razorpay.me/@rahul7002";
+
+      // Log for debugging
+      console.log("Redirecting to Razorpay Payment Link:", razorpayLink);
+
+      // Open the payment link in a new tab
+      const newWindow = window.open(razorpayLink, "_blank");
       if (!newWindow) {
-        alert("Unable to open UPI payment link. Please ensure a UPI app is installed.");
-        console.error("Failed to open UPI payment link.");
+        alert("Unable to open Razorpay payment link. Please try again.");
+        console.error("Failed to open Razorpay payment link.");
       }
     } catch (error) {
-      console.error("Error initiating UPI Payment:", error);
+      console.error("Error initiating Razorpay Payment:", error);
     }
   };
 
@@ -42,10 +27,14 @@ const UpiPayment = () => {
         padding: "10px 20px",
         fontSize: "16px",
         cursor: "pointer",
-        margin: "20px"
+        margin: "20px",
+        backgroundColor: "#007bff",
+        color: "#fff",
+        border: "none",
+        borderRadius: "5px"
       }}
     >
-      Pay with UPI
+      Pay Now with Razorpay
     </button>
   );
 };
